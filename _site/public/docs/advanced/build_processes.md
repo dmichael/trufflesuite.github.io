@@ -71,6 +71,7 @@ In Node, this is very easy to do. Let's take a look at an example that shows off
 var json = require("./build/contracts/MyContract.json");
 
 // Step 2: Turn that contract into an abstraction I can use
+var Web3 = require("web3");
 var contract = require("truffle-contract");
 var MyContract = contract(json);
 
@@ -79,7 +80,7 @@ MyContract.setProvider(new Web3.providers.HttpProvider("http://localhost:8545"))
 
 // Step 4: Use the contract!
 MyContract.deployed().then(function(deployed) {
-  return.deployed.someFunction();
+  return deployed.someFunction();
 });
 ```
 
